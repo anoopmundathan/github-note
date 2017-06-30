@@ -11,6 +11,18 @@ body {
     font: normal 16px/1.5 "Helvetica Neue";
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    text-align: center
+}
+
+li {
+    padding: 10px;
+}
+
 .container {
     width: 90%;
     margin-top: 10%;
@@ -51,13 +63,15 @@ body {
     width: 50%;
     border-radius: 50%;
     margin-top: 20px;
+    margin-bottom: 20px;
+    border: 5px solid #ff7473;
 }
 
 .profile,
 .repo,
 .notes {
     margin: 10px ;
-    padding: 10px;
+    padding: 5px;
     background: #ff5f2e;
     border-radius: 5px;
     cursor: pointer;

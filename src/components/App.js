@@ -1,67 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Profile extends Component {
-  render() {
-    return(
-      <div className='profile-container'>
-        <img 
-            src={this.props.github.avatar_url}
-            alt='github profile'/>
-        <div className='profile'>
-          <p>Profile</p>
-        </div>
-        <div className='repo'>
-          <p>Repo</p>
-        </div>
-        <div className='notes'>
-          <p>Notes</p>
-        </div>
-      </div>
-    );
-  }
-}
-
-Profile.PropTypes = {
-  github: PropTypes.object.isRequired
-}
-
-class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: ''
-    }
-  }
-
-  onChange(e) {
-    this.setState({
-      name: e.target.value
-    });
-  }
-
-  render() {
-    return(
-      <div>
-        <input
-            className='username'
-            type='text'
-            value={this.state.name}
-            onChange={this.onChange.bind(this)}
-          />
-        <input 
-            className='search'
-            type='button'
-            value='Search'
-            onClick={this.props.onSearch.bind(null, this.state.name)}/>
-      </div>
-    );
-  }
-}
-
-Search.PropTypes = {
-  onSearch: PropTypes.func.isRequired
-}
+import Profile from './Profile';
+import Search from './Search';
 
 class App extends Component {
   constructor(props) {
