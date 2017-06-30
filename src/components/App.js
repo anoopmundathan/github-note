@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 class Profile extends Component {
-
   render() {
     return(
-      <div>
+      <div className='profile-container'>
         <img 
             src={this.props.github.avatar_url}
             alt='github profile'/>
-        <p>Profile</p>
-        <p>Repo</p>
-        <p>Notes</p>
+        <div className='profile'>
+          <p>Profile</p>
+        </div>
+        <div className='repo'>
+          <p>Repo</p>
+        </div>
+        <div className='notes'>
+          <p>Notes</p>
+        </div>
       </div>
     );
   }
@@ -39,12 +43,14 @@ class Search extends Component {
   render() {
     return(
       <div>
-        <input 
+        <input
+            className='username'
             type='text'
             value={this.state.name}
             onChange={this.onChange.bind(this)}
           />
         <input 
+            className='search'
             type='button'
             value='Search'
             onClick={this.props.onSearch.bind(null, this.state.name)}/>
@@ -83,7 +89,7 @@ class App extends Component {
   render() {
     const userName = this.state.username;
     return (
-      <div>
+      <div className='container'>
         {!userName 
           ?
           <Search
